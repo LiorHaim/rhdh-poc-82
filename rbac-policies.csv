@@ -29,8 +29,8 @@ p,role:default/developers,scaffolder.task,create,allow
 p,role:default/developers,scaffolder.task,read,allow
 p,role:default/developers,scaffolder.task,cancel,allow
 p,role:default/developers,catalog.entity,create,allow
-p,role:default/developers,catalog.entity,read,allow,"{""anyOf"":[{""isEntityOwner"":{""claims"":[""$user"",""$groups""]}},{""allOf"":[{""isKind"":{""value"":""Group""}},{""hasRelation"":{""relation"":""hasMember"",""targetRef"":""$user""}}]}]}"
-p,role:default/developers,catalog.entity,refresh,allow,"{""anyOf"":[{""isEntityOwner"":{""claims"":[""$user"",""$groups""]}}]}"
+p,role:default/developers,catalog.entity,read,allow,"{""anyOf"":[{""rule"":""IS_ENTITY_OWNER"",""resourceType"":""catalog-entity"",""params"":{""claims"":[""$ownerRefs""]}},{""rule"":""IS_ENTITY_KIND"",""resourceType"":""catalog-entity"",""params"":{""kinds"":[""Group""]}}]}"
+p,role:default/developers,catalog.entity,refresh,allow,"{""anyOf"":[{""rule"":""IS_ENTITY_OWNER"",""resourceType"":""catalog-entity"",""params"":{""claims"":[""$ownerRefs""]}}]}"
 p,role:default/developers,catalog.entity,delete,deny
 p,role:default/developers,catalog.location,create,deny
 p,role:default/developers,catalog.location,read,allow
@@ -40,5 +40,5 @@ p,role:default/developers,policy.entity.update,update,deny
 p,role:default/developers,policy.entity.delete,delete,deny
 p,role:default/developers,kubernetes.proxy,use,allow
 p,role:default/developers,topology.view,read,allow
-p,role:default/developers,techdocs.entity,read,allow,"{""anyOf"":[{""isEntityOwner"":{""claims"":[""$user"",""$groups""]}}]}"
+p,role:default/developers,techdocs.entity,read,allow,"{""anyOf"":[{""rule"":""IS_ENTITY_OWNER"",""resourceType"":""catalog-entity"",""params"":{""claims"":[""$ownerRefs""]}}]}"
 p,role:default/developers,gitlab.proxy,use,allow
