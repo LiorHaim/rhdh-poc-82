@@ -1,0 +1,37 @@
+apiVersion: rhdh.redhat.com/v1alpha3
+kind: Backstage
+metadata:
+  name: developer-hub
+  namespace: rhdh-operator
+  labels:
+    app.kubernetes.io/name: backstage
+spec:
+  application:
+    appConfig:
+      configMaps:
+        - name: rhdh-custom-appconfig
+      mountPath: /opt/app-root/src
+    dynamicPluginsConfigMapName: backstage-dynamic-plugins
+    extraEnvs:
+      envs:
+        - name: NODE_ENV
+          value: development
+    extraFiles:
+      configMaps:
+        - name: rbac-policies
+      mountPath: /opt/app-root/src
+    replicas: 1
+    route:
+      enabled: true
+  database:
+    enableLocalDb: true
+  deployment:
+    patch:
+      spec:
+        template:
+          spec:
+            volumes:
+              - $patch: replace
+                name: dynamic-plugins-root
+                persistentVolumeClaim:
+                  claimName: dynamic-plugins-root
