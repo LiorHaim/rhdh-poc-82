@@ -1,3 +1,7 @@
+g, group:default/rhdh-admins, role:default/extensions-admin
+p, role:default/extensions-admin, extensions-plugin, create, allow
+
+g, group:default/administrators, role:default/administrators
 p, role:default/administrators, catalog.entity, read, allow
 p, role:default/administrators, catalog.entity, create, allow
 p, role:default/administrators, catalog.entity, refresh, allow
@@ -20,6 +24,7 @@ p, role:default/administrators, topology.view, read, allow
 p, role:default/administrators, techdocs.entity, read, allow
 p, role:default/administrators, gitlab.proxy, use, allow
 
+g, group:default/developers, role:default/developers
 p, role:default/developers, scaffolder.action.execute, use, allow
 p, role:default/developers, scaffolder.template.parameter, read, allow
 p, role:default/developers, scaffolder.template.step, read, allow
