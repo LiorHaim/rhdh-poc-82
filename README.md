@@ -11,7 +11,7 @@ This repository documents **Proof of Concept 82**, which focuses on testing and 
 ## Requirements Overview
 The following diagram summarizes the RBAC requirements identified for this POC:
 
-![RBAC Requirements](rbac_requirements.jpg)
+![RBAC Requirements](images/rbac_requirements.jpg)
 
 ## Next Steps
 - Implement the RBAC model in the RHDH environment.
