@@ -18,7 +18,12 @@ spec:
           value: development
     extraFiles:
       configMaps:
-        - name: rbac-policies
+        - name: rbac-policies-cm
+          key: rbac-policies.csv
+          mountPath: /opt/app-root/src/rbac
+        - name: rbac-conditions-cm
+          key: rbac-conditional-policies.yaml
+          mountPath: /opt/app-root/src/rbac
       mountPath: /opt/app-root/src
     replicas: 1
     route:
@@ -31,7 +36,6 @@ spec:
         template:
           spec:
             volumes:
-              - $patch: replace
-                name: dynamic-plugins-root
+              - name: dynamic-plugins-root
                 persistentVolumeClaim:
                   claimName: dynamic-plugins-root
