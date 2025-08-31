@@ -13,39 +13,27 @@ data:
       - read
       - update
     conditions:
-      rule: IS_ENTITY_OWNER
-      resourceType: catalog-entity
-      params:
-        claims: ["$ownerRefs"]
+      anyOf:
+        # Owner via user or any of the user's groups
+        - rule: IS_ENTITY_OWNER
+          resourceType: catalog-entity
+          params:
+            claims: ["$ownerRefs"]
 
-    ---
-    result: CONDITIONAL
-    roleEntityRef: role:default/developers
-    pluginId: catalog
-    resourceType: catalog-entity
-    permissionMapping:
-      - read
-    conditions:
-      allOf:
+        # Group entities that include the caller in spec.members
+        - allOf:
+            - rule: IS_ENTITY_KIND
+              resourceType: catalog-entity
+              params:
+                kinds: ["Group"]
+            - rule: HAS_SPEC
+              resourceType: catalog-entity
+              params:
+                key: members
+                value: "$currentUser"
+
+        # All User entities
         - rule: IS_ENTITY_KIND
           resourceType: catalog-entity
           params:
-            kinds: ["Group"]
-        - rule: HAS_SPEC
-          resourceType: catalog-entity
-          params:
-            key: members
-            value: "$currentUser"
-
-    ---
-    result: CONDITIONAL
-    roleEntityRef: role:default/developers
-    pluginId: catalog
-    resourceType: catalog-entity
-    permissionMapping:
-      - read
-    conditions:
-      rule: IS_ENTITY_KIND
-      resourceType: catalog-entity
-      params:
-        kinds: ["User"]
+            kinds: ["User"]
