@@ -1,0 +1,62 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: rbac-policies-cm
+  namespace: rhdh-operator
+data:
+  rbac-policies.csv: |
+    g,group:default/rhdh-admins,role:default/administrators
+    g,group:default/rhdh-administrators,role:default/administrators
+
+    p,role:default/administrators,adoption-insights.events.read,read,allow
+    p,role:default/administrators,extensions-plugin,create,allow
+    p,role:default/administrators,catalog.entity.read,read,allow
+    p,role:default/administrators,catalog.entity.create,create,allow
+    p,role:default/administrators,catalog.entity.delete,delete,allow
+    p,role:default/administrators,catalog.entity.refresh,update,allow
+    p,role:default/administrators,catalog.location.read,read,allow
+    p,role:default/administrators,catalog.location.create,create,allow
+    p,role:default/administrators,catalog.location.delete,delete,allow
+    p,role:default/administrators,policy.entity.read,read,allow
+    p,role:default/administrators,policy.entity.create,create,allow
+    p,role:default/administrators,policy.entity.delete,delete,allow
+    p,role:default/administrators,policy.entity.update,update,allow
+    p,role:default/administrators,scaffolder.action.execute,use,allow
+    p,role:default/administrators,scaffolder.template.parameter.read,read,allow
+    p,role:default/administrators,scaffolder.template.step.read,read,allow
+    p,role:default/administrators,scaffolder.action.execute,use,allow
+    p,role:default/administrators,scaffolder.task.cancel,use,allow
+    p,role:default/administrators,scaffolder.task.create,create,allow
+    p,role:default/administrators,scaffolder.task.read,read,allow
+    p,role:default/administrators,scaffolder.template.management,use,allow
+    p,role:default/administrators,kubernetes.clusters.read,read,allow
+    p,role:default/administrators,kubernetes.resources.read,read,allow
+    p,role:default/administrators,kubernetes.proxy,use,allow
+    p,role:default/administrators,topology.view,read,allow
+    p,role:default/administrators,techdocs.entity,read,allow
+    p,role:default/administrators,gitlab.proxy,use,allow
+
+    g,group:default/developers,role:default/developers
+
+    p,role:default/developers,scaffolder.action.execute,use,allow
+    p,role:default/developers,scaffolder.template.parameter.read,read,allow
+    p,role:default/developers,scaffolder.template.step.read,read,allow
+    p,role:default/developers,scaffolder.task.create,create,allow
+    p,role:default/developers,scaffolder.task.read,read,allow
+    p,role:default/developers,scaffolder.task.cancel,use,allow
+    p,role:default/developers,scaffolder.template.management,use,deny
+
+    p,role:default/developers,catalog.entity.create,create,allow
+    p,role:default/developers,catalog.entity.delete,delete,deny
+    p,role:default/developers,catalog.location.read,read,allow
+    p,role:default/developers,catalog.location.create,create,deny
+    p,role:default/developers,policy.entity.read,read,deny
+    p,role:default/developers,policy.entity.create,create,deny
+    p,role:default/developers,policy.entity.update,update,deny
+    p,role:default/developers,policy.entity.delete,delete,deny
+    p,role:default/developers,kubernetes.clusters.read,read,allow
+    p,role:default/developers,kubernetes.resources.read,read,allow
+    p,role:default/developers,kubernetes.proxy,use,allow
+    p,role:default/developers,topology.view,read,allow
+    p,role:default/developers,techdocs.entity,read,allow
+    p,role:default/developers,gitlab.proxy,use,allow
