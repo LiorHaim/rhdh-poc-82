@@ -14,13 +14,11 @@ data:
       - update
     conditions:
       anyOf:
-        # Owner via user or any of the user's groups
         - rule: IS_ENTITY_OWNER
           resourceType: catalog-entity
           params:
             claims: ["$ownerRefs"]
 
-        # Group entities that include the caller in spec.members
         - allOf:
             - rule: IS_ENTITY_KIND
               resourceType: catalog-entity
@@ -32,7 +30,6 @@ data:
                 key: members
                 value: "$currentUser"
 
-        # All User entities
         - rule: IS_ENTITY_KIND
           resourceType: catalog-entity
           params:
