@@ -1,0 +1,51 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: rbac-conditions-cm
+  namespace: rhdh-operator
+data:
+  rbac-conditional-policies.yaml: |
+    result: CONDITIONAL
+    roleEntityRef: role:default/developers
+    pluginId: catalog
+    resourceType: catalog-entity
+    permissionMapping:
+      - read
+      - update
+    conditions:
+      rule: IS_ENTITY_OWNER
+      resourceType: catalog-entity
+      params:
+        claims: ["$ownerRefs"]
+
+    ---
+    result: CONDITIONAL
+    roleEntityRef: role:default/developers
+    pluginId: catalog
+    resourceType: catalog-entity
+    permissionMapping:
+      - read
+    conditions:
+      allOf:
+        - rule: IS_ENTITY_KIND
+          resourceType: catalog-entity
+          params:
+            kinds: ["Group"]
+        - rule: HAS_SPEC
+          resourceType: catalog-entity
+          params:
+            key: members
+            value: "$currentUser"
+
+    ---
+    result: CONDITIONAL
+    roleEntityRef: role:default/developers
+    pluginId: catalog
+    resourceType: catalog-entity
+    permissionMapping:
+      - read
+    conditions:
+      rule: IS_ENTITY_KIND
+      resourceType: catalog-entity
+      params:
+        kinds: ["User"]
