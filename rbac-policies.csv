@@ -21,4 +21,10 @@ p,role:default/administrators,scaffolder.task.cancel,use,allow
 p,role:default/administrators,scaffolder.task.create,create,allow
 p,role:default/administrators,scaffolder.task.read,read,allow
 p,role:default/administrators,scaffolder.template.management,use,allow
+p,role:default/administrators,kubernetes.clusters.read,read,allow
+p,role:default/administrators,kubernetes.resources.read,read,allow
+p,role:default/administrators,kubernetes.proxy,use,allow
+p,role:default/administrators,topology.view,read,allow
+p,role:default/administrators,techdocs.entity,read,allow
+p,role:default/administrators,gitlab.proxy,use,allow
 g,group:default/developers,role:default/developers
