@@ -36,6 +36,7 @@ spec:
         template:
           spec:
             volumes:
-              - name: dynamic-plugins-root
+              - $patch: replace
+                name: dynamic-plugins-root
                 persistentVolumeClaim:
                   claimName: dynamic-plugins-root
