@@ -19,5 +19,5 @@ metadata:
     lighthouse.com/website-url: https://backstage.io
 spec:
   type: library
-  owner: group:default/administrators
+  owner: group:default/rhdh-administrators
   lifecycle: production
