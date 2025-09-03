@@ -4,7 +4,9 @@ metadata:
   namespace: default
   name: developers
   annotations:
-    rbac.target: group:default/developers
+    rbac.target: 'group:default/developers'
 spec:
+  type: team
   profile:
     displayName: Developers
+  children: []
