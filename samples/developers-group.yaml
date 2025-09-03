@@ -5,3 +5,6 @@ metadata:
   name: developers
   annotations:
     rbac.target: group:default/developers
+spec:
+  profile:
+    displayName: Developers
