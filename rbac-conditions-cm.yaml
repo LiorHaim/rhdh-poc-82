@@ -5,6 +5,7 @@ metadata:
   namespace: rhdh-operator
 data:
   rbac-conditional-policies.yaml: |
+    # Scope: developers' access to catalog entities
     result: CONDITIONAL
     roleEntityRef: role:default/developers
     pluginId: catalog
@@ -14,32 +15,14 @@ data:
       - update
     conditions:
       anyOf:
-        # Owner via user or any of the user's groups
+        # Owners: user or any of the user's groups listed in $ownerRefs
         - rule: IS_ENTITY_OWNER
           resourceType: catalog-entity
           params:
             claims: ["$ownerRefs"]
 
-        # Groups the caller belongs to
-        - allOf:
-            - rule: IS_ENTITY_KIND
-              resourceType: catalog-entity
-              params:
-                kinds: ["Group"]
-            - anyOf:
-                - rule: HAS_SPEC
-                  resourceType: catalog-entity
-                  params:
-                    key: members
-                    value: "$currentUser"
-                - rule: HAS_SPEC
-                  resourceType: catalog-entity
-                  params:
-                    key: hasMember
-                    value: "$currentUser"
-
-        # All User entities
+        # All User and Group entities are readable in this POC
         - rule: IS_ENTITY_KIND
           resourceType: catalog-entity
           params:
-            kinds: ["User"]
+            kinds: ["User", "Group"]
