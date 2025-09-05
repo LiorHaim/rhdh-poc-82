@@ -16,7 +16,7 @@ The following diagram summarizes the RBAC requirements identified for this POC:
 ## Tested versions
 • RHDH: **1.7.0**  
 • Deployment method: **Operator on OpenShift**  
-• Backstage and plugin bundles: versions as provided from rhdh 1.7 image.
+• Backstage and plugin bundles: versions as provided from rhe rhdh 1.7.0 image
 
 ## Requirements traceability
 | Capability | Implementation in this repo | How to validate |
@@ -43,7 +43,9 @@ The following diagram summarizes the RBAC requirements identified for this POC:
 
 ## Limitations and notes
 • Integration panels such as Kubernetes and GitLab are reachable from entity pages. Since developers can only open pages they own, integration visibility follows ownership.
+
 • Developers do not have access to RBAC configuration or policy browsing. This is by design for this POC.
+
 • Search results inherit visibility from the source plugins and the permission framework. There is no separate search permission in this POC.
 
 ## Configuration variables
