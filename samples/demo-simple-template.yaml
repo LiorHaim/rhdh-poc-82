@@ -1,0 +1,31 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: demo-simple-template
+  title: Demo simple template
+  description: Minimal template to demonstrate developer execution
+  tags:
+    - demo
+    - rbac
+spec:
+  owner: group:defaul/rhdh-administrators
+  type: service
+  parameters:
+    - title: Basic info
+      required:
+        - name
+      properties:
+        name:
+          type: string
+          title: Name
+          description: Printed to task logs
+  steps:
+    - id: log
+      name: Print message
+      action: debug:log
+      input:
+        message: "Hello from {{ parameters.name }}"
+  output:
+    text:
+      - title: Result
+        content: "Completed template for {{ parameters.name }}"
