@@ -20,6 +20,4 @@ The following diagram summarizes the RBAC requirements identified for this POC:
 
 ---
 
-**Authors:** Lior Haim & Michael Kotelnikov
-
 **Status:** Work in progress
