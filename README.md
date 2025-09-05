@@ -16,7 +16,7 @@ The following diagram summarizes the RBAC requirements identified for this POC:
 ## Tested versions
 • RHDH: **1.7.0**  
 • Deployment method: **Operator on OpenShift**  
-• Backstage and plugin bundles: versions as provided from rhe rhdh 1.7.0 image
+• Backstage and plugin bundles: versions as provided from the rhdh 1.7.0 image
 
 ## Requirements traceability
 | Capability | Implementation in this repo | How to validate |
@@ -26,7 +26,7 @@ The following diagram summarizes the RBAC requirements identified for this POC:
 | View Owned Entities only | Conditional policy in `rbac-conditions-cm.yaml` with `result: CONDITIONAL` for `role:default/developers` on `catalog-entity` grants read and update when the user is owner or member of the owning group. | As developer who owns `component:default/foo`, open it and confirm visibility and edit actions. Attempt to open a non owned entity and expect a permission error. |
 | View All Entities (admins) | Administrators have full catalog read, create, delete, refresh in `rbac-policies-cm.yaml`. | Sign in as admin and browse several entities. Confirm full visibility and delete is enabled. |
 | View Component Integrations for owned components only | Developers have read for Kubernetes and use for GitLab proxy. Visibility is effectively gated by entity read ownership and cluster side RBAC. | From an owned component page, open **Kubernetes** and **GitLab** tabs. Confirm read works. Try to navigate to a non owned entity page and confirm it is not visible, so its integrations are not reachable. |
-| View Group Information | Conditional policy allows viewing `Group` entities only when the user is a member through `spec.members` or `spec.hasMember`. | As developer, open your team group. Confirm it is visible. Attempt another group where you are not a member and expect a permission error. |
+| View Group Information | **Known gap.** In this POC developers can view all **Group** entities. Current RHDH 1.7 capabilities do not support restricting visibility of Groups by actual membership. | As developer, open several Group entities including ones you are not a member of. Confirm they are visible. As admin, confirm full visibility. |
 | Access RBAC Configuration | Developers: `policy.entity.* deny`. Administrators: `policy.entity.* allow`. | As developer, try to open the Permissions or Policy UI and expect a permission error. As admin, confirm full access. |
 | Delete Components | Developers: `catalog.entity.delete deny`. Administrators: `catalog.entity.delete allow`. | As developer, attempt to delete any component and expect a permission error. As admin, delete a test component. |
 | Optional: View Related Component Info | Relation visibility follows the same conditional read. | From an owned component page, open the relations graph or related tabs. Confirm only allowed entities appear. |
@@ -36,17 +36,25 @@ The following diagram summarizes the RBAC requirements identified for this POC:
 2. Open the owned component. Confirm you can view details, run a template, read TechDocs if present, and see integrations on that page.  
 3. Try to open a component you do not own. Expect a permission error.  
 4. Try **Register existing component**. Expect a permission error.  
-5. Open your **Group** entity. Confirm it is visible. Open a different group where you are not a member. Expect a permission error.  
+5. Open several **Group** entities, including ones you are not a member of. Confirm they are all visible.  
+   ⚠️ This reflects a known gap in RHDH 1.7: group visibility cannot be restricted by membership in this POC.  
 6. Sign out and sign in as an **administrator**.  
 7. Browse any entity. Confirm full visibility including **Delete** and **Refresh** actions.  
 8. Open **Permissions** or **Policy** UI. Confirm full access as admin.
 
 ## Limitations and notes
-• Integration panels such as Kubernetes and GitLab are reachable from entity pages. Since developers can only open pages they own, integration visibility follows ownership.
-
-• Developers do not have access to RBAC configuration or policy browsing. This is by design for this POC.
-
+• **Known gap.** Group visibility is not restricted by membership in this POC. Developers can view all Group entities.  
+• Current RHDH 1.7 capabilities do not support relation based enforcement for Groups.  
+• The Kubernetes and Topology plugins are configured with a single service account that has cluster wide read access and do not impersonate end users. Effective scoping in this POC is achieved by showing these panels only on owned entity pages.  
+• Developers do not have access to RBAC configuration or policy browsing. This is by design for this POC.  
 • Search results inherit visibility from the source plugins and the permission framework. There is no separate search permission in this POC.
+## After the POC
+Following this POC, additional work will be required to address the Group visibility gap.  
+Testing after changes should include:  
+1. Developer access to their own Groups.  
+2. Developer access to Groups they are not a member of.  
+3. Search results containing only allowed Groups.  
+4. Administrator access to all Groups.
 
 ## Configuration variables
 | Variable | Meaning | Example |
