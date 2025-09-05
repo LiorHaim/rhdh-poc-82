@@ -8,7 +8,7 @@ metadata:
     - demo
     - rbac
 spec:
-  owner: group:defaul/rhdh-administrators
+  owner: group:default/rhdh-administrators
   type: service
   parameters:
     - title: Basic info
