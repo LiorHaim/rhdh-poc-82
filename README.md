@@ -16,7 +16,7 @@ The following diagram summarizes the RBAC requirements identified for this POC:
 ## Tested versions
 • RHDH: **1.7.0**  
 • Deployment method: **Operator on OpenShift**  
-• Backstage and plugin bundles: versions as pinned in repo manifests (dynamic plugins and app config)
+• Backstage and plugin bundles: versions as provided from rhdh 1.7 image.
 
 ## Requirements traceability
 | Capability | Implementation in this repo | How to validate |
@@ -42,9 +42,8 @@ The following diagram summarizes the RBAC requirements identified for this POC:
 8. Open **Permissions** or **Policy** UI. Confirm full access as admin.
 
 ## Limitations and notes
-• Integration panels such as Kubernetes and GitLab are reachable from entity pages. Since developers can only open pages they own, integration visibility follows ownership. For Kubernetes, cluster side RBAC should also restrict data by namespace or service account.  
-• Developers do not have access to RBAC configuration or policy browsing. This is by design for this POC.  
-• If you want developers to manually refresh their own entities, add `catalog.entity.refresh update allow` for the developers role.  
+• Integration panels such as Kubernetes and GitLab are reachable from entity pages. Since developers can only open pages they own, integration visibility follows ownership.
+• Developers do not have access to RBAC configuration or policy browsing. This is by design for this POC.
 • Search results inherit visibility from the source plugins and the permission framework. There is no separate search permission in this POC.
 
 ## Configuration variables
