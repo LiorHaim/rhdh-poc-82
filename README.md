@@ -48,13 +48,6 @@ The following diagram summarizes the RBAC requirements identified for this POC:
 • The Kubernetes and Topology plugins are configured with a single service account that has cluster wide read access and do not impersonate end users. Effective scoping in this POC is achieved by showing these panels only on owned entity pages.  
 • Developers do not have access to RBAC configuration or policy browsing. This is by design for this POC.  
 • Search results inherit visibility from the source plugins and the permission framework. There is no separate search permission in this POC.
-## After the POC
-Following this POC, additional work will be required to address the Group visibility gap.  
-Testing after changes should include:  
-1. Developer access to their own Groups.  
-2. Developer access to Groups they are not a member of.  
-3. Search results containing only allowed Groups.  
-4. Administrator access to all Groups.
 
 ## Configuration variables
 | Variable | Meaning | Example |
