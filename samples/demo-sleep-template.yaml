@@ -1,0 +1,31 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: demo-sleep-template
+  title: Demo sleep template
+  description: Minimal template that waits for a few seconds, useful to demo task execution
+  tags:
+    - demo
+    - rbac
+spec:
+  owner: group:default/rhdh-administrators
+  type: service
+  parameters:
+    - title: Sleep settings
+      required: [duration]
+      properties:
+        duration:
+          type: number
+          title: Duration (ms)
+          description: How long to sleep in milliseconds
+          default: 2000
+  steps:
+    - id: sleep
+      name: Sleep step
+      action: debug:sleep
+      input:
+        amount: "{{ parameters.duration }}"
+  output:
+    text:
+      - title: Result
+        content: "Template completed after sleeping {{ parameters.duration }} ms"
