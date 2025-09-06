@@ -1,0 +1,43 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: demo-gitlab-fetch
+  title: Demo GitLab Fetch template
+  description: Fetches a local skeleton from this repo and creates a zip artifact
+  tags:
+    - demo
+    - rbac
+    - gitlab
+spec:
+  owner: group:default/rhdh-administrators
+  type: service
+  parameters:
+    - title: Basic settings
+      required:
+        - name
+      properties:
+        name:
+          type: string
+          title: Name
+          default: POC
+  steps:
+    - id: fetch
+      name: Fetch skeleton in this repo
+      action: fetch:template
+      input:
+        url: ./skeleton
+        values:
+          name: ${{ parameters.name }}
+          timestamp: ${{ now | date('YYYY-MM-DD HH:mm:ss') }}
+    - id: archive
+      name: Produce artifact
+      action: publish:file
+      input:
+        path: ./artifact-${{ parameters.name }}.zip
+  output:
+    links:
+      - title: Download artifact
+        url: ${{ steps.archive.output.path }}
+    text:
+      - title: Result
+        content: "Fetched skeleton and completed for ${{ parameters.name }} at ${{ steps.fetch.output.values.timestamp }}"
