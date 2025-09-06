@@ -12,8 +12,7 @@ spec:
   type: service
   parameters:
     - title: Sleep settings
-      required:
-        - duration
+      required: [duration]
       properties:
         duration:
           type: number
@@ -23,9 +22,9 @@ spec:
   steps:
     - id: sleep
       name: Sleep step
-      action: debug:wait
+      action: debug:sleep
       input:
-        milliseconds: 2000 #${{ parameters.duration }}
+        milliseconds: ${{ parameters.duration }}
   output:
     text:
       - title: Result
