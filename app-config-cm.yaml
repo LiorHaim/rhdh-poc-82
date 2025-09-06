@@ -78,3 +78,10 @@ data:
 
     techRadar:
       url: ${TECHRADAR_URL}
+    scaffolder:
+      actions:
+        allowed:
+          - fetch:template
+          - publish:file
+          - debug:wait
+          - debug:log
