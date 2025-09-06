@@ -78,6 +78,7 @@ data:
 
     techRadar:
       url: ${TECHRADAR_URL}
+      
     scaffolder:
       actions:
         allowed:
