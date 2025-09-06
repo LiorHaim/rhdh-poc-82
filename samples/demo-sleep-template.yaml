@@ -21,10 +21,10 @@ spec:
           default: 2000
   steps:
     - id: sleep
-      name: Sleep step
-      action: debug:wait
-      input:
-        milliseconds: {{ parameters.duration }}
+    name: Sleep step
+    action: debug:wait
+    input:
+      milliseconds: ${{ parameters.duration }}
   output:
     text:
       - title: Result
