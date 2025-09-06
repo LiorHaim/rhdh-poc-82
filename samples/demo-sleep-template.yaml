@@ -22,7 +22,7 @@ spec:
   steps:
     - id: sleep
       name: Sleep step
-      action: debug:sleep
+      action: debug:wait
       input:
         milliseconds: ${{ parameters.duration }}
   output:
