@@ -28,4 +28,4 @@ spec:
   output:
     text:
       - title: Result
-        content: "Template completed after sleeping {{ parameters.duration }} ms"
+        content: "Template completed after sleeping ${{ parameters.duration }} ms"
