@@ -24,8 +24,8 @@ spec:
       name: Print message
       action: debug:log
       input:
-        message: "Hello from {{ parameters.name }}"
+        message: "Hello from ${{ parameters.name }}"
   output:
     text:
       - title: Result
-        content: "Completed template for {{ parameters.name }}"
+        content: "Completed template for ${{ parameters.name }}"
