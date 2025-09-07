@@ -24,6 +24,8 @@ data:
     p,role:default/administrators,policy.entity.create,create,allow
     p,role:default/administrators,policy.entity.delete,delete,allow
     p,role:default/administrators,policy.entity.update,update,allow
+    p,role:default/administrators,catalog.entity.validate,use,allow
+    p,role:default/administrators,catalog.location.analyze,use,allow
     p,role:default/administrators,scaffolder.action.execute,use,allow
     p,role:default/administrators,scaffolder.template.parameter.read,read,allow
     p,role:default/administrators,scaffolder.template.step.read,read,allow
@@ -38,24 +40,24 @@ data:
     p,role:default/administrators,techdocs.entity,read,allow
     p,role:default/administrators,gitlab.proxy,use,allow
 
-    # Developers
+    # Developers (Denied by default)
     p,role:default/developers,scaffolder.action.execute,use,allow
     p,role:default/developers,scaffolder.template.parameter.read,read,allow
     p,role:default/developers,scaffolder.template.step.read,read,allow
     p,role:default/developers,scaffolder.task.create,create,allow
     p,role:default/developers,scaffolder.task.read,read,allow
     p,role:default/developers,scaffolder.task.cancel,use,allow
-    p,role:default/developers,scaffolder.template.management,use,deny
+  #  p,role:default/developers,scaffolder.template.management,use,deny
 
     p,role:default/developers,catalog.entity.create,create,allow
-    p,role:default/developers,catalog.entity.delete,delete,deny
+  #  p,role:default/developers,catalog.entity.delete,delete,deny
     p,role:default/developers,catalog.location.read,read,allow
-    p,role:default/developers,catalog.location.create,create,deny
+  #  p,role:default/developers,catalog.location.create,create,deny
 
-    p,role:default/developers,policy.entity.read,read,deny
-    p,role:default/developers,policy.entity.create,create,deny
-    p,role:default/developers,policy.entity.update,update,deny
-    p,role:default/developers,policy.entity.delete,delete,deny
+  #  p,role:default/developers,policy.entity.read,read,deny
+  #  p,role:default/developers,policy.entity.create,create,deny
+  #  p,role:default/developers,policy.entity.update,update,deny
+  #  p,role:default/developers,policy.entity.delete,delete,deny
 
     p,role:default/developers,kubernetes.clusters.read,read,allow
     p,role:default/developers,kubernetes.resources.read,read,allow
