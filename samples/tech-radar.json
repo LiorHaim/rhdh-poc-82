@@ -1,0 +1,332 @@
+{
+  "rings": [
+    { "id": "adopt", "name": "ADOPT", "color": "#93c47d", "description": "Technologies we use in production. Safe to use." },
+    { "id": "trial", "name": "TRIAL", "color": "#93d2c2", "description": "Worth pursuing. Use in non-critical projects." },
+    { "id": "assess", "name": "ASSESS", "color": "#fbdb84", "description": "Worth exploring. Understand how it impacts us." },
+    { "id": "hold", "name": "HOLD", "color": "#efafa9", "description": "Proceed with caution. Don't start new projects with this." }
+  ],
+  "quadrants": [
+    { "id": "languages", "name": "Languages & Frameworks" },
+    { "id": "platforms", "name": "Platforms & Infrastructure" },
+    { "id": "tools", "name": "Tools" },
+    { "id": "techniques", "name": "Techniques & Processes" }
+  ],
+  "entries": [
+    {
+      "id": "java",
+      "title": "Java",
+      "quadrant": "languages",
+      "description": "Enterprise-grade backend language",
+      "timeline": [
+        { "ring": "adopt", "date": "2024-01-01", "description": "Primary backend language for microservices" }
+      ]
+    },
+    {
+      "id": "python",
+      "title": "Python",
+      "quadrant": "languages",
+      "description": "Scripting, automation, and data processing",
+      "timeline": [
+        { "ring": "adopt", "date": "2024-01-01", "description": "Used for automation, scripting, and ML workloads" }
+      ]
+    },
+    {
+      "id": "typescript",
+      "title": "TypeScript",
+      "quadrant": "languages",
+      "description": "Type-safe JavaScript for frontend and Node.js",
+      "timeline": [
+        { "ring": "adopt", "date": "2024-01-01", "description": "Standard for all frontend development" }
+      ]
+    },
+    {
+      "id": "go",
+      "title": "Go",
+      "quadrant": "languages",
+      "description": "Cloud-native systems programming",
+      "timeline": [
+        { "ring": "trial", "date": "2024-06-01", "description": "Exploring for CLI tools and high-performance services" }
+      ]
+    },
+    {
+      "id": "rust",
+      "title": "Rust",
+      "quadrant": "languages",
+      "description": "Memory-safe systems programming",
+      "timeline": [
+        { "ring": "assess", "date": "2024-09-01", "description": "Evaluating for performance-critical components" }
+      ]
+    },
+    {
+      "id": "spring-boot",
+      "title": "Spring Boot",
+      "quadrant": "languages",
+      "description": "Java microservices framework",
+      "timeline": [
+        { "ring": "adopt", "date": "2024-01-01", "description": "Standard framework for Java services" }
+      ]
+    },
+    {
+      "id": "quarkus",
+      "title": "Quarkus",
+      "quadrant": "languages",
+      "description": "Kubernetes-native Java framework",
+      "timeline": [
+        { "ring": "trial", "date": "2024-03-01", "description": "Cloud-native Java with fast startup times" }
+      ]
+    },
+    {
+      "id": "react",
+      "title": "React",
+      "quadrant": "languages",
+      "description": "Frontend UI library",
+      "timeline": [
+        { "ring": "adopt", "date": "2024-01-01", "description": "Standard for all web frontends" }
+      ]
+    },
+    {
+      "id": "kubernetes",
+      "title": "Kubernetes",
+      "quadrant": "platforms",
+      "description": "Container orchestration platform",
+      "timeline": [
+        { "ring": "adopt", "date": "2024-01-01", "description": "Standard container orchestration for all workloads" }
+      ]
+    },
+    {
+      "id": "openshift",
+      "title": "OpenShift",
+      "quadrant": "platforms",
+      "description": "Enterprise Kubernetes platform",
+      "timeline": [
+        { "ring": "adopt", "date": "2024-01-01", "description": "Our primary Kubernetes distribution" }
+      ]
+    },
+    {
+      "id": "aws",
+      "title": "AWS",
+      "quadrant": "platforms",
+      "description": "Amazon Web Services cloud platform",
+      "timeline": [
+        { "ring": "adopt", "date": "2024-01-01", "description": "Primary cloud provider for infrastructure" }
+      ]
+    },
+    {
+      "id": "azure",
+      "title": "Azure",
+      "quadrant": "platforms",
+      "description": "Microsoft Azure cloud platform",
+      "timeline": [
+        { "ring": "trial", "date": "2024-06-01", "description": "Secondary cloud for specific workloads" }
+      ]
+    },
+    {
+      "id": "podman",
+      "title": "Podman",
+      "quadrant": "platforms",
+      "description": "Daemonless container engine",
+      "timeline": [
+        { "ring": "adopt", "date": "2024-01-01", "description": "Preferred container runtime for local development" }
+      ]
+    },
+    {
+      "id": "docker",
+      "title": "Docker",
+      "quadrant": "platforms",
+      "description": "Container runtime and tooling",
+      "timeline": [
+        { "ring": "hold", "date": "2024-01-01", "description": "Migrating to Podman for local development" }
+      ]
+    },
+    {
+      "id": "kafka",
+      "title": "Apache Kafka",
+      "quadrant": "platforms",
+      "description": "Distributed event streaming platform",
+      "timeline": [
+        { "ring": "adopt", "date": "2024-01-01", "description": "Standard for event-driven architectures" }
+      ]
+    },
+    {
+      "id": "postgresql",
+      "title": "PostgreSQL",
+      "quadrant": "platforms",
+      "description": "Relational database",
+      "timeline": [
+        { "ring": "adopt", "date": "2024-01-01", "description": "Default choice for relational data" }
+      ]
+    },
+    {
+      "id": "redis",
+      "title": "Redis",
+      "quadrant": "platforms",
+      "description": "In-memory data store and cache",
+      "timeline": [
+        { "ring": "adopt", "date": "2024-01-01", "description": "Standard caching layer" }
+      ]
+    },
+    {
+      "id": "gitlab",
+      "title": "GitLab",
+      "quadrant": "tools",
+      "description": "Source control and CI/CD platform",
+      "timeline": [
+        { "ring": "adopt", "date": "2024-01-01", "description": "Primary source control and CI/CD platform" }
+      ]
+    },
+    {
+      "id": "argocd",
+      "title": "ArgoCD",
+      "quadrant": "tools",
+      "description": "GitOps continuous delivery",
+      "timeline": [
+        { "ring": "adopt", "date": "2024-01-01", "description": "GitOps deployment to Kubernetes" }
+      ]
+    },
+    {
+      "id": "backstage",
+      "title": "Backstage / RHDH",
+      "quadrant": "tools",
+      "description": "Internal Developer Portal",
+      "timeline": [
+        { "ring": "adopt", "date": "2024-01-01", "description": "Central developer portal for service catalog" }
+      ]
+    },
+    {
+      "id": "helm",
+      "title": "Helm",
+      "quadrant": "tools",
+      "description": "Kubernetes package manager",
+      "timeline": [
+        { "ring": "adopt", "date": "2024-01-01", "description": "Standard for Kubernetes deployments" }
+      ]
+    },
+    {
+      "id": "terraform",
+      "title": "Terraform",
+      "quadrant": "tools",
+      "description": "Infrastructure as Code",
+      "timeline": [
+        { "ring": "adopt", "date": "2024-01-01", "description": "IaC for cloud infrastructure" }
+      ]
+    },
+    {
+      "id": "ansible",
+      "title": "Ansible",
+      "quadrant": "tools",
+      "description": "Automation and configuration management",
+      "timeline": [
+        { "ring": "adopt", "date": "2024-01-01", "description": "Standard for configuration management" }
+      ]
+    },
+    {
+      "id": "prometheus",
+      "title": "Prometheus",
+      "quadrant": "tools",
+      "description": "Metrics and monitoring",
+      "timeline": [
+        { "ring": "adopt", "date": "2024-01-01", "description": "Standard metrics collection" }
+      ]
+    },
+    {
+      "id": "grafana",
+      "title": "Grafana",
+      "quadrant": "tools",
+      "description": "Observability dashboards",
+      "timeline": [
+        { "ring": "adopt", "date": "2024-01-01", "description": "Visualization for metrics and logs" }
+      ]
+    },
+    {
+      "id": "sonarqube",
+      "title": "SonarQube",
+      "quadrant": "tools",
+      "description": "Code quality and security analysis",
+      "timeline": [
+        { "ring": "adopt", "date": "2024-01-01", "description": "Code quality gates in CI/CD" }
+      ]
+    },
+    {
+      "id": "vault",
+      "title": "HashiCorp Vault",
+      "quadrant": "tools",
+      "description": "Secrets management",
+      "timeline": [
+        { "ring": "trial", "date": "2024-06-01", "description": "Evaluating for secrets management" }
+      ]
+    },
+    {
+      "id": "microservices",
+      "title": "Microservices",
+      "quadrant": "techniques",
+      "description": "Distributed service architecture",
+      "timeline": [
+        { "ring": "adopt", "date": "2024-01-01", "description": "Standard architecture for new services" }
+      ]
+    },
+    {
+      "id": "gitops",
+      "title": "GitOps",
+      "quadrant": "techniques",
+      "description": "Git as single source of truth for deployments",
+      "timeline": [
+        { "ring": "adopt", "date": "2024-01-01", "description": "Standard deployment methodology" }
+      ]
+    },
+    {
+      "id": "trunk-based",
+      "title": "Trunk-Based Development",
+      "quadrant": "techniques",
+      "description": "Short-lived branches, frequent integration",
+      "timeline": [
+        { "ring": "adopt", "date": "2024-01-01", "description": "Preferred branching strategy" }
+      ]
+    },
+    {
+      "id": "api-first",
+      "title": "API-First Design",
+      "quadrant": "techniques",
+      "description": "Design APIs before implementation",
+      "timeline": [
+        { "ring": "adopt", "date": "2024-01-01", "description": "Standard for all new services" }
+      ]
+    },
+    {
+      "id": "feature-flags",
+      "title": "Feature Flags",
+      "quadrant": "techniques",
+      "description": "Runtime feature toggles",
+      "timeline": [
+        { "ring": "trial", "date": "2024-06-01", "description": "Exploring for progressive rollouts" }
+      ]
+    },
+    {
+      "id": "chaos-engineering",
+      "title": "Chaos Engineering",
+      "quadrant": "techniques",
+      "description": "Controlled failure injection testing",
+      "timeline": [
+        { "ring": "assess", "date": "2024-09-01", "description": "Evaluating for resilience testing" }
+      ]
+    },
+    {
+      "id": "pair-programming",
+      "title": "Pair Programming",
+      "quadrant": "techniques",
+      "description": "Collaborative coding practice",
+      "timeline": [
+        { "ring": "trial", "date": "2024-03-01", "description": "Encouraged for complex features and onboarding" }
+      ]
+    },
+    {
+      "id": "innersource",
+      "title": "InnerSource",
+      "quadrant": "techniques",
+      "description": "Open source practices within the organization",
+      "timeline": [
+        { "ring": "trial", "date": "2024-06-01", "description": "Promoting cross-team collaboration" }
+      ]
+    }
+  ]
+}
+
