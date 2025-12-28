@@ -13,320 +13,354 @@
   ],
   "entries": [
     {
+      "key": "java",
       "id": "java",
       "title": "Java",
       "quadrant": "languages",
       "description": "Enterprise-grade backend language",
       "timeline": [
-        { "ring": "adopt", "date": "2024-01-01", "description": "Primary backend language for microservices" }
+        { "ringId": "adopt", "date": "2024-01-01", "description": "Primary backend language for microservices" }
       ]
     },
     {
+      "key": "python",
       "id": "python",
       "title": "Python",
       "quadrant": "languages",
       "description": "Scripting, automation, and data processing",
       "timeline": [
-        { "ring": "adopt", "date": "2024-01-01", "description": "Used for automation, scripting, and ML workloads" }
+        { "ringId": "adopt", "date": "2024-01-01", "description": "Used for automation, scripting, and ML workloads" }
       ]
     },
     {
+      "key": "typescript",
       "id": "typescript",
       "title": "TypeScript",
       "quadrant": "languages",
       "description": "Type-safe JavaScript for frontend and Node.js",
       "timeline": [
-        { "ring": "adopt", "date": "2024-01-01", "description": "Standard for all frontend development" }
+        { "ringId": "adopt", "date": "2024-01-01", "description": "Standard for all frontend development" }
       ]
     },
     {
+      "key": "go",
       "id": "go",
       "title": "Go",
       "quadrant": "languages",
       "description": "Cloud-native systems programming",
       "timeline": [
-        { "ring": "trial", "date": "2024-06-01", "description": "Exploring for CLI tools and high-performance services" }
+        { "ringId": "trial", "date": "2024-06-01", "description": "Exploring for CLI tools and high-performance services" }
       ]
     },
     {
+      "key": "rust",
       "id": "rust",
       "title": "Rust",
       "quadrant": "languages",
       "description": "Memory-safe systems programming",
       "timeline": [
-        { "ring": "assess", "date": "2024-09-01", "description": "Evaluating for performance-critical components" }
+        { "ringId": "assess", "date": "2024-09-01", "description": "Evaluating for performance-critical components" }
       ]
     },
     {
+      "key": "spring-boot",
       "id": "spring-boot",
       "title": "Spring Boot",
       "quadrant": "languages",
       "description": "Java microservices framework",
       "timeline": [
-        { "ring": "adopt", "date": "2024-01-01", "description": "Standard framework for Java services" }
+        { "ringId": "adopt", "date": "2024-01-01", "description": "Standard framework for Java services" }
       ]
     },
     {
+      "key": "quarkus",
       "id": "quarkus",
       "title": "Quarkus",
       "quadrant": "languages",
       "description": "Kubernetes-native Java framework",
       "timeline": [
-        { "ring": "trial", "date": "2024-03-01", "description": "Cloud-native Java with fast startup times" }
+        { "ringId": "trial", "date": "2024-03-01", "description": "Cloud-native Java with fast startup times" }
       ]
     },
     {
+      "key": "react",
       "id": "react",
       "title": "React",
       "quadrant": "languages",
       "description": "Frontend UI library",
       "timeline": [
-        { "ring": "adopt", "date": "2024-01-01", "description": "Standard for all web frontends" }
+        { "ringId": "adopt", "date": "2024-01-01", "description": "Standard for all web frontends" }
       ]
     },
     {
+      "key": "kubernetes",
       "id": "kubernetes",
       "title": "Kubernetes",
       "quadrant": "platforms",
       "description": "Container orchestration platform",
       "timeline": [
-        { "ring": "adopt", "date": "2024-01-01", "description": "Standard container orchestration for all workloads" }
+        { "ringId": "adopt", "date": "2024-01-01", "description": "Standard container orchestration for all workloads" }
       ]
     },
     {
+      "key": "openshift",
       "id": "openshift",
       "title": "OpenShift",
       "quadrant": "platforms",
       "description": "Enterprise Kubernetes platform",
       "timeline": [
-        { "ring": "adopt", "date": "2024-01-01", "description": "Our primary Kubernetes distribution" }
+        { "ringId": "adopt", "date": "2024-01-01", "description": "Our primary Kubernetes distribution" }
       ]
     },
     {
+      "key": "aws",
       "id": "aws",
       "title": "AWS",
       "quadrant": "platforms",
       "description": "Amazon Web Services cloud platform",
       "timeline": [
-        { "ring": "adopt", "date": "2024-01-01", "description": "Primary cloud provider for infrastructure" }
+        { "ringId": "adopt", "date": "2024-01-01", "description": "Primary cloud provider for infrastructure" }
       ]
     },
     {
+      "key": "azure",
       "id": "azure",
       "title": "Azure",
       "quadrant": "platforms",
       "description": "Microsoft Azure cloud platform",
       "timeline": [
-        { "ring": "trial", "date": "2024-06-01", "description": "Secondary cloud for specific workloads" }
+        { "ringId": "trial", "date": "2024-06-01", "description": "Secondary cloud for specific workloads" }
       ]
     },
     {
+      "key": "podman",
       "id": "podman",
       "title": "Podman",
       "quadrant": "platforms",
       "description": "Daemonless container engine",
       "timeline": [
-        { "ring": "adopt", "date": "2024-01-01", "description": "Preferred container runtime for local development" }
+        { "ringId": "adopt", "date": "2024-01-01", "description": "Preferred container runtime for local development" }
       ]
     },
     {
+      "key": "docker",
       "id": "docker",
       "title": "Docker",
       "quadrant": "platforms",
       "description": "Container runtime and tooling",
       "timeline": [
-        { "ring": "hold", "date": "2024-01-01", "description": "Migrating to Podman for local development" }
+        { "ringId": "hold", "date": "2024-01-01", "description": "Migrating to Podman for local development" }
       ]
     },
     {
+      "key": "kafka",
       "id": "kafka",
       "title": "Apache Kafka",
       "quadrant": "platforms",
       "description": "Distributed event streaming platform",
       "timeline": [
-        { "ring": "adopt", "date": "2024-01-01", "description": "Standard for event-driven architectures" }
+        { "ringId": "adopt", "date": "2024-01-01", "description": "Standard for event-driven architectures" }
       ]
     },
     {
+      "key": "postgresql",
       "id": "postgresql",
       "title": "PostgreSQL",
       "quadrant": "platforms",
       "description": "Relational database",
       "timeline": [
-        { "ring": "adopt", "date": "2024-01-01", "description": "Default choice for relational data" }
+        { "ringId": "adopt", "date": "2024-01-01", "description": "Default choice for relational data" }
       ]
     },
     {
+      "key": "redis",
       "id": "redis",
       "title": "Redis",
       "quadrant": "platforms",
       "description": "In-memory data store and cache",
       "timeline": [
-        { "ring": "adopt", "date": "2024-01-01", "description": "Standard caching layer" }
+        { "ringId": "adopt", "date": "2024-01-01", "description": "Standard caching layer" }
       ]
     },
     {
+      "key": "gitlab",
       "id": "gitlab",
       "title": "GitLab",
       "quadrant": "tools",
       "description": "Source control and CI/CD platform",
       "timeline": [
-        { "ring": "adopt", "date": "2024-01-01", "description": "Primary source control and CI/CD platform" }
+        { "ringId": "adopt", "date": "2024-01-01", "description": "Primary source control and CI/CD platform" }
       ]
     },
     {
+      "key": "argocd",
       "id": "argocd",
       "title": "ArgoCD",
       "quadrant": "tools",
       "description": "GitOps continuous delivery",
       "timeline": [
-        { "ring": "adopt", "date": "2024-01-01", "description": "GitOps deployment to Kubernetes" }
+        { "ringId": "adopt", "date": "2024-01-01", "description": "GitOps deployment to Kubernetes" }
       ]
     },
     {
+      "key": "backstage",
       "id": "backstage",
       "title": "Backstage / RHDH",
       "quadrant": "tools",
       "description": "Internal Developer Portal",
       "timeline": [
-        { "ring": "adopt", "date": "2024-01-01", "description": "Central developer portal for service catalog" }
+        { "ringId": "adopt", "date": "2024-01-01", "description": "Central developer portal for service catalog" }
       ]
     },
     {
+      "key": "helm",
       "id": "helm",
       "title": "Helm",
       "quadrant": "tools",
       "description": "Kubernetes package manager",
       "timeline": [
-        { "ring": "adopt", "date": "2024-01-01", "description": "Standard for Kubernetes deployments" }
+        { "ringId": "adopt", "date": "2024-01-01", "description": "Standard for Kubernetes deployments" }
       ]
     },
     {
+      "key": "terraform",
       "id": "terraform",
       "title": "Terraform",
       "quadrant": "tools",
       "description": "Infrastructure as Code",
       "timeline": [
-        { "ring": "adopt", "date": "2024-01-01", "description": "IaC for cloud infrastructure" }
+        { "ringId": "adopt", "date": "2024-01-01", "description": "IaC for cloud infrastructure" }
       ]
     },
     {
+      "key": "ansible",
       "id": "ansible",
       "title": "Ansible",
       "quadrant": "tools",
       "description": "Automation and configuration management",
       "timeline": [
-        { "ring": "adopt", "date": "2024-01-01", "description": "Standard for configuration management" }
+        { "ringId": "adopt", "date": "2024-01-01", "description": "Standard for configuration management" }
       ]
     },
     {
+      "key": "prometheus",
       "id": "prometheus",
       "title": "Prometheus",
       "quadrant": "tools",
       "description": "Metrics and monitoring",
       "timeline": [
-        { "ring": "adopt", "date": "2024-01-01", "description": "Standard metrics collection" }
+        { "ringId": "adopt", "date": "2024-01-01", "description": "Standard metrics collection" }
       ]
     },
     {
+      "key": "grafana",
       "id": "grafana",
       "title": "Grafana",
       "quadrant": "tools",
       "description": "Observability dashboards",
       "timeline": [
-        { "ring": "adopt", "date": "2024-01-01", "description": "Visualization for metrics and logs" }
+        { "ringId": "adopt", "date": "2024-01-01", "description": "Visualization for metrics and logs" }
       ]
     },
     {
+      "key": "sonarqube",
       "id": "sonarqube",
       "title": "SonarQube",
       "quadrant": "tools",
       "description": "Code quality and security analysis",
       "timeline": [
-        { "ring": "adopt", "date": "2024-01-01", "description": "Code quality gates in CI/CD" }
+        { "ringId": "adopt", "date": "2024-01-01", "description": "Code quality gates in CI/CD" }
       ]
     },
     {
+      "key": "vault",
       "id": "vault",
       "title": "HashiCorp Vault",
       "quadrant": "tools",
       "description": "Secrets management",
       "timeline": [
-        { "ring": "trial", "date": "2024-06-01", "description": "Evaluating for secrets management" }
+        { "ringId": "trial", "date": "2024-06-01", "description": "Evaluating for secrets management" }
       ]
     },
     {
+      "key": "microservices",
       "id": "microservices",
       "title": "Microservices",
       "quadrant": "techniques",
       "description": "Distributed service architecture",
       "timeline": [
-        { "ring": "adopt", "date": "2024-01-01", "description": "Standard architecture for new services" }
+        { "ringId": "adopt", "date": "2024-01-01", "description": "Standard architecture for new services" }
       ]
     },
     {
+      "key": "gitops",
       "id": "gitops",
       "title": "GitOps",
       "quadrant": "techniques",
       "description": "Git as single source of truth for deployments",
       "timeline": [
-        { "ring": "adopt", "date": "2024-01-01", "description": "Standard deployment methodology" }
+        { "ringId": "adopt", "date": "2024-01-01", "description": "Standard deployment methodology" }
       ]
     },
     {
+      "key": "trunk-based",
       "id": "trunk-based",
       "title": "Trunk-Based Development",
       "quadrant": "techniques",
       "description": "Short-lived branches, frequent integration",
       "timeline": [
-        { "ring": "adopt", "date": "2024-01-01", "description": "Preferred branching strategy" }
+        { "ringId": "adopt", "date": "2024-01-01", "description": "Preferred branching strategy" }
       ]
     },
     {
+      "key": "api-first",
       "id": "api-first",
       "title": "API-First Design",
       "quadrant": "techniques",
       "description": "Design APIs before implementation",
       "timeline": [
-        { "ring": "adopt", "date": "2024-01-01", "description": "Standard for all new services" }
+        { "ringId": "adopt", "date": "2024-01-01", "description": "Standard for all new services" }
       ]
     },
     {
+      "key": "feature-flags",
       "id": "feature-flags",
       "title": "Feature Flags",
       "quadrant": "techniques",
       "description": "Runtime feature toggles",
       "timeline": [
-        { "ring": "trial", "date": "2024-06-01", "description": "Exploring for progressive rollouts" }
+        { "ringId": "trial", "date": "2024-06-01", "description": "Exploring for progressive rollouts" }
       ]
     },
     {
+      "key": "chaos-engineering",
       "id": "chaos-engineering",
       "title": "Chaos Engineering",
       "quadrant": "techniques",
       "description": "Controlled failure injection testing",
       "timeline": [
-        { "ring": "assess", "date": "2024-09-01", "description": "Evaluating for resilience testing" }
+        { "ringId": "assess", "date": "2024-09-01", "description": "Evaluating for resilience testing" }
       ]
     },
     {
+      "key": "pair-programming",
       "id": "pair-programming",
       "title": "Pair Programming",
       "quadrant": "techniques",
       "description": "Collaborative coding practice",
       "timeline": [
-        { "ring": "trial", "date": "2024-03-01", "description": "Encouraged for complex features and onboarding" }
+        { "ringId": "trial", "date": "2024-03-01", "description": "Encouraged for complex features and onboarding" }
       ]
     },
     {
+      "key": "innersource",
       "id": "innersource",
       "title": "InnerSource",
       "quadrant": "techniques",
       "description": "Open source practices within the organization",
       "timeline": [
-        { "ring": "trial", "date": "2024-06-01", "description": "Promoting cross-team collaboration" }
+        { "ringId": "trial", "date": "2024-06-01", "description": "Promoting cross-team collaboration" }
       ]
     }
   ]
 }
-
